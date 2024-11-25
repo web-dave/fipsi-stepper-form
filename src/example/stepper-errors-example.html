@@ -1,0 +1,25 @@
+<mat-stepper #stepper>
+  <mat-step [stepFormFroup]="firstFormGroup" errorMessage="Name is required.">
+    <ng-template matStepLabel>Fill out your name</ng-template>
+    <step-name />
+  </mat-step>
+  <mat-step
+    [stepFormFroup]="secondFormGroup"
+    errorMessage="Address is required."
+  >
+    <ng-template matStepLabel>Fill out your address</ng-template>
+    <step-address />
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-stepper>
+
+<!-- Copyright 2024 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->
